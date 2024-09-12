@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 5rem;
+}
+
+.header .navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.header .navbar a {
+    font-size: 1.6rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.header .navbar a:hover {
+    color: #d3ad7f;
+}
+
+.header #menu {
+    display: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+#close {
+    display: none;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    padding: 0 9%;
+    background-color: #2a201c;
+    color: #fff;
+}
+
+.home .content {
+    flex: 1;
+}
+
+.home .content .title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.home .content .title span {
+    color: #d3ad7f;
+}
+
+.home .content .description {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.home .content .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.6rem;
+    background-color: #d3ad7f;
+    color: #fff;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.home .content .btn:hover {
+    background-color: #fff;
+    color: #d3ad7f;
+}
+
+.home .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.home .image img {
+    max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home .image img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        z-index: 999;
+    }
+
+    .header #menu {
+        display: inline-block;
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    #close {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .header .navbar a {
+        margin: 1.5rem 0;
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home .content .title {
+        font-size: 3.5rem;
+    }
+
+    .home .content .description {
+        font-size: 1.4rem;
+    }
+
+    .home .content .btn {
+        font-size: 1.4rem;
+    }
+}
